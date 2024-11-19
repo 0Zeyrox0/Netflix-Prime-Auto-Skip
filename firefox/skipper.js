@@ -1309,7 +1309,7 @@ if (isPrimeVideo || isNetflix || isDisney || isHotstar || isCrunchyroll || isHBO
   function filterDub(display) {
     let list = document.querySelectorAll("cite[itemprop='name']");
     list.forEach((element) => {
-      if (element.textContent.includes("Dub") || element.textContent.includes("Audio"))
+      if (!(element.textContent.includes("German Dub") || element.textContent.includes("German Audio")))
         element.parentElement.parentElement.parentElement.parentElement.parentElement.style.display = display;
     });
     if (display == "block" && settings.General.filterQueued) filterQueued("none");
